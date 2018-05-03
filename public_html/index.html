@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wypozyczalnia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img alt="Wypożyczalnia" src="images/logo.png"/>
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="admin.html">Admin</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-title">
+            <h1>rezerwacja online</h1>
+            <h1><span>24 / 7</span></h1>
+            <a class="button button-blue" href="rent.html">Zarezerwuj</a>
+        </div>
+    </header>
+    <div class="gray-section">
+        <div class="container">
+            <form class="theGame">
+                <div>
+                    <h1>Gracz 1</h1>
+                    Wzrost <input type="text" name="wzrost1"/>
+                    Wiek <input type="text" name="wiek1"/>
+                </div>
+                <div>
+                    <h1>Gracz 2</h1>
+                    Wzrost <input type="text" name="wzrost2"/>
+                    Wiek <input type="text" name="wiek2"/>
+                </div>
+
+                <div>
+                    <button type="button" name="playTheGame">Kto wygral?</button>
+                    <span class="result">Zwyciężył <span></span></span>
+                </div>
+                <div>
+                    <button type="button" name="newGame">Nowa gra</button>
+                </div>
+            </form>
+
+            <script type="text/javascript">
+
+                function calculateScore(wiek, wzrost) {
+                    return (5 * wiek) + wzrost;
+                }
+
+                function whoWon(score1, score2) {
+                    if (score1 > score2) {
+                        return "Gracz 1";
+                    } else if (score2 > score1) {
+                        return "Gracz 2";
+                    }
+                    return "Remis";
+                }
+
+
+                document.querySelector('form.theGame button[name="playTheGame"]').addEventListener('click', function () {
+                    var wzrost1 = parseInt(document.querySelector('form input[name="wzrost1"]').value);
+                    var wiek1 = parseInt(document.querySelector('form input[name="wiek1"]').value);
+
+                    var wzrost2 = parseInt(document.querySelector('form input[name="wzrost2"]').value);
+                    var wiek2 = parseInt(document.querySelector('form input[name="wiek2"]').value);
+
+                    console.log('wzrost1', wzrost1);
+                    console.log('wiek1', wiek1);
+                    console.log('wzrost2', wzrost2);
+                    console.log('wiek2', wiek2);
+
+                    var score1 = calculateScore(wiek1, wzrost1);
+                    var score2 = calculateScore(wiek2, wzrost2);
+
+                    console.log('score1', score1);
+                    console.log('score2', score2);
+
+
+                    document.querySelector('form span.result span').textContent = whoWon(score1, score2);
+                });
+
+                document.querySelector('form.theGame button[name="newGame"]').addEventListener('click', function () {
+                    document.querySelector('form input[name="wzrost1"]').value = "";
+                    document.querySelector('form input[name="wiek1"]').value = "";
+
+                    document.querySelector('form input[name="wzrost2"]').value = "";
+                    document.querySelector('form input[name="wiek2"]').value = "";
+                });
+
+            </script>
+            <h2>Posiadamy flotę kilkuset nowych i bogato wyposażonych pojazdów.<br>
+                Posiadamy <b>samochody wszystkich klas</b> i różnych marek.
+            </h2>
+            <h3><span class="blue">Skontaktuj się z nami</span> - a pomozemy Ci wybrać najlepszą ofertę.
+            </h3>
+        </div>
+    </div>
+    <div class="brown-section">
+        <div class="container">
+            <div class="blue-section">
+                <form method="get" action="rent.html">
+                    <div class="column">
+                        <label for="date">Data odbioru:</label>
+                        <input placeholder="12-12-2017" type="text" id="date" name="date">
+                    </div>
+                    <div class="column">
+                        <label for="place">Miejsce odbioru:</label>
+                        <select id="place" name="place">
+                            <option value="lotnisko">1. Wroclaw Lotnisko</option>
+                            <option value="galeria">2. Galeria Dominikanska</option>
+                            <option value="bielany">3. Bielany Wroclawskie</option>
+                        </select>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="agree" name="agree" value="agree">
+                        <label for="agree">Zgadzam się z <a class="link">Regulaminem</a>.</label>
+                    </div>
+                    <div class="form-button">
+                        <button class="button button-violet">Wybierz auto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="section-about">
+        <div class="container">
+            <h1>O nas</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec vulputate ipsum, et pellentesque
+                ex.
+                Etiam lectus nibh, consectetur porttitor sagittis facilisis, consequat sed sem. Sed nec pellentesque
+                urna.
+                Cras at leo hendrerit mauris ultricies ornare. Donec laoreet interdum ex et aliquam. Quisque eget sem
+                arcu.
+                Sed sed pellentesque massa. Morbi lacinia dolor id orci ultrices ullamcorper. Aliquam erat volutpat.
+                Cras
+                sit amet consectetur massa, eu vulputate magna.
+            </p>
+            <a class="readMore" href="#">Czytaj dalej</a>
+            <p>
+                Nam vitae felis nisi. Nullam sed quam lacinia, facilisis felis quis, dictum ipsum. Aliquam congue ligula
+                eget porta sodales. Sed porttitor viverra molestie. Proin vel justo quis justo blandit mattis eget quis
+                lectus. Maecenas vel consequat nunc. Aliquam lobortis dui nec dictum blandit. Praesent a nisi
+                condimentum,
+                lacinia eros quis, rutrum enim. Nunc non massa pretium, malesuada justo nec, semper tellus. Curabitur
+                pellentesque diam in metus lobortis euismod.
+            </p>
+            <p>
+                Pellentesque tempus lacus id justo posuere semper. Donec commodo fringilla ante, vel varius nisi
+                suscipit
+                quis. Pellentesque sed lacinia diam. Phasellus ut turpis fringilla, venenatis orci a, dictum nunc. Morbi
+                imperdiet elit ut convallis fringilla. In dignissim rhoncus libero, et maximus tellus tempor a. Sed
+                vehicula
+                leo vel eleifend luctus. In cursus mollis lorem in fermentum. Mauris justo augue, feugiat quis
+                consectetur
+                vitae, consectetur quis arcu. Curabitur efficitur ultricies est a vulputate. Nullam ac odio hendrerit,
+                mattis nulla eget, lobortis nisi. Mauris magna est, laoreet sollicitudin ultrices eu, pellentesque
+                dapibus
+                nisi.
+            </p>
+            <p>
+                Sed sodales justo sed purus dignissim, at consequat velit tincidunt. Mauris vel elementum elit. Integer
+                pulvinar orci non porttitor pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                maximus
+                nunc ac arcu pharetra, vitae convallis turpis feugiat. Aenean consectetur, eros eu aliquet gravida,
+                ipsum
+                mauris varius diam, eget condimentum ipsum elit vel arcu. Praesent a arcu erat. Ut in enim sodales,
+                accumsan
+                augue eget, viverra felis. Nulla facilisi. Proin ex erat, iaculis in nunc id, pharetra lacinia justo.
+                Sed
+                semper viverra tempus. Ut scelerisque elementum maximus. Etiam cursus et neque ac gravida. Integer
+                consequat
+                consequat lectus eu mattis. Nam bibendum augue ut arcu mollis, placerat hendrerit purus congue.
+                Pellentesque
+                dolor magna, tristique a consectetur non, auctor id ex.
+            </p>
+            <p>
+                Curabitur vel aliquam leo. Vivamus at nisl tempor, aliquam ipsum sed, bibendum ex. Phasellus eu maximus
+                lorem, nec varius ipsum. Ut dolor nulla, finibus ac fermentum ac, laoreet eu eros. Vestibulum ante ipsum
+                primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ultricies, mauris eu viverra
+                aliquam, arcu turpis tempus nisi, ac malesuada odio urna vel enim. Integer et arcu a mi eleifend
+                maximus.
+            </p>
+            <a class="hideButton" href="#">Ukryj</a>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2017</p>
+    </footer>
+</div>
+
+<script type="application/javascript" src="js/readMore.js"></script>
+
+</body>
+</html>
