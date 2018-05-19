@@ -32,74 +32,6 @@
     </header>
     <div class="gray-section">
         <div class="container">
-            <form class="theGame">
-                <div>
-                    <h1>Gracz 1</h1>
-                    Wzrost <input type="text" name="wzrost1"/>
-                    Wiek <input type="text" name="wiek1"/>
-                </div>
-                <div>
-                    <h1>Gracz 2</h1>
-                    Wzrost <input type="text" name="wzrost2"/>
-                    Wiek <input type="text" name="wiek2"/>
-                </div>
-
-                <div>
-                    <button type="button" name="playTheGame">Kto wygral?</button>
-                    <span class="result">Zwyciężył <span></span></span>
-                </div>
-                <div>
-                    <button type="button" name="newGame">Nowa gra</button>
-                </div>
-            </form>
-
-            <script type="text/javascript">
-
-                function calculateScore(wiek, wzrost) {
-                    return (5 * wiek) + wzrost;
-                }
-
-                function whoWon(score1, score2) {
-                    if (score1 > score2) {
-                        return "Gracz 1";
-                    } else if (score2 > score1) {
-                        return "Gracz 2";
-                    }
-                    return "Remis";
-                }
-
-
-                document.querySelector('form.theGame button[name="playTheGame"]').addEventListener('click', function () {
-                    var wzrost1 = parseInt(document.querySelector('form input[name="wzrost1"]').value);
-                    var wiek1 = parseInt(document.querySelector('form input[name="wiek1"]').value);
-
-                    var wzrost2 = parseInt(document.querySelector('form input[name="wzrost2"]').value);
-                    var wiek2 = parseInt(document.querySelector('form input[name="wiek2"]').value);
-
-                    console.log('wzrost1', wzrost1);
-                    console.log('wiek1', wiek1);
-                    console.log('wzrost2', wzrost2);
-                    console.log('wiek2', wiek2);
-
-                    var score1 = calculateScore(wiek1, wzrost1);
-                    var score2 = calculateScore(wiek2, wzrost2);
-
-                    console.log('score1', score1);
-                    console.log('score2', score2);
-
-
-                    document.querySelector('form span.result span').textContent = whoWon(score1, score2);
-                });
-
-                document.querySelector('form.theGame button[name="newGame"]').addEventListener('click', function () {
-                    document.querySelector('form input[name="wzrost1"]').value = "";
-                    document.querySelector('form input[name="wiek1"]').value = "";
-
-                    document.querySelector('form input[name="wzrost2"]').value = "";
-                    document.querySelector('form input[name="wiek2"]').value = "";
-                });
-
-            </script>
             <h2>Posiadamy flotę kilkuset nowych i bogato wyposażonych pojazdów.<br>
                 Posiadamy <b>samochody wszystkich klas</b> i różnych marek.
             </h2>
@@ -148,7 +80,6 @@
                 Cras
                 sit amet consectetur massa, eu vulputate magna.
             </p>
-            <a class="readMore" href="#">Czytaj dalej</a>
             <p>
                 Nam vitae felis nisi. Nullam sed quam lacinia, facilisis felis quis, dictum ipsum. Aliquam congue ligula
                 eget porta sodales. Sed porttitor viverra molestie. Proin vel justo quis justo blandit mattis eget quis
@@ -193,15 +124,12 @@
                 aliquam, arcu turpis tempus nisi, ac malesuada odio urna vel enim. Integer et arcu a mi eleifend
                 maximus.
             </p>
-            <a class="hideButton" href="#">Ukryj</a>
         </div>
     </div>
     <footer>
         <p>Copyright © 2017</p>
     </footer>
 </div>
-
-<script type="application/javascript" src="js/readMore.js"></script>
 
 </body>
 </html>
